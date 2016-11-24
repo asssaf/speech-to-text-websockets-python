@@ -58,11 +58,11 @@ $ docker run --rm -it asssaf/watson-sttclient
 You can bind mount a host volume with the recordings into the container using something like:
 
 `
-$ docker run --rm -it -v ${PWD}/recordings:/work asssaf/watson-sttclient -credentials <your-api-key> -in /work/recordings.txt -out /work/output -type audio/flac
+$ docker run --rm -it -v <recordings-dir>:/work asssaf/watson-sttclient -credentials <your-api-key> -in /work/recordings.txt -out /work/output -type audio/flac
 `                                                           
 
-This will mount `${PWD}/recordings/` from the host as `/work` and generate the output in `/work/output/`. 
-In this case it will look for `${PWD}/recordings/recordings.txt` with content such as:
+This will mount `<recordings-dir>` from the host as `/work` and generate the output in `<recordings-dir>/output/`. 
+In this case it will look for `<recording-dir>/recordings.txt` with content such as:
 ```
 /work/1.flac
 /work/2.flac
