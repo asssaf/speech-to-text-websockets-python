@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 #
 # Copyright IBM Corp. 2014
 #
@@ -200,7 +201,7 @@ class WSInterfaceProtocol(WebSocketClientProtocol):
                bFinal = (jsonObject['results'][0]['final'] == True)
                if bFinal:
                   print "final hypothesis: \"" + hypothesis + "\""
-                  self.summary[self.uttNumber]['hypothesis'] += hypothesis
+                  self.summary[self.uttNumber]['hypothesis'] += hypothesis + ". "
                else:
                   print "interim hyp: \"" + hypothesis + "\""
 
